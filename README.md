@@ -20,48 +20,11 @@ sudo apt-get install ffmpeg
 
 ### Step 2: Run Tests
 
-#### Option A: Basic Version (Simple)
 ```bash
 python test.py
 ```
 
-#### Option B: Advanced Version (Recommended)
-```bash
-python test_advanced.py
-```
-
 ### Step 3: Integrate into Your Project
-
-#### Basic Integration
-```python
-from selenium import webdriver
-from RecaptchaSolver import RecaptchaSolver
-
-options = webdriver.ChromeOptions()
-options.add_argument("--incognito")
-driver = webdriver.Chrome(options=options)
-
-driver.get("YOUR_URL_WITH_RECAPTCHA")
-solver = RecaptchaSolver(driver)
-solver.solveCaptcha()
-```
-
-#### Advanced Integration (with Retry)
-```python
-from selenium import webdriver
-from RecaptchaSolverAdvanced import RecaptchaSolverAdvanced
-
-options = webdriver.ChromeOptions()
-options.add_argument("--disable-blink-features=AutomationControlled")
-driver = webdriver.Chrome(options=options)
-
-driver.get("YOUR_URL_WITH_RECAPTCHA")
-solver = RecaptchaSolverAdvanced(driver, max_retries=3)
-success = solver.solveCaptcha()
-
-if success:
-    print("Success!")
-```
 
 ## Common Commands
 
